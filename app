@@ -52,11 +52,11 @@ function loop() {
     }, current.time);
 }
 
-function up(lines) {
+function up(lines = 1) {
     console.log("\x1b[" + lines + "A");
 }
 
-function down(lines) {
+function down(lines = 1) {
     console.log("\x1b[" + lines + "B");
 }
 
@@ -65,8 +65,6 @@ function clear() {
 }
 
 process.on('SIGINT', function() {
-    console.log("Caught interrupt signal");
-
     clear();
 
     process.exit();
